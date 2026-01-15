@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Harshjain ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Hearts background animation */
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .heart-bg {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            animation: floatUp linear forwards;
+            bottom: -50px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+        }
+        
+        @keyframes floatUp {
+            to {
+                transform: translateY(calc(-100vh - 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Card styling */
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            background: white;
+        }
+        
+        .front {
+            color: #333;
+        }
+        
+        .back {
+            color: #333;
+            transform: rotateY(180deg);
+        }
+        
+        /* Text styling */
+        .message {
+            font-size: 26px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #222;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .message-front {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 28px;
+            color: #222;
+        }
+        
+        .hint {
+            position: absolute;
+            bottom: 25px;
+            color: #666;
+            font-size: 16px;
+            animation: pulse 2s infinite;
+            font-style: italic;
+        }
+        
+        .kiss-count {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff6b8b;
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Decorative elements */
+        .heart-decoration {
+            color: #ff6b8b;
+            font-size: 32px;
+            margin: 15px 5px;
+            opacity: 0.8;
+        }
+        
+        .heart-row {
+            display: flex;
+            margin: 10px 0;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .message {
+                font-size: 22px;
+            }
+            .message-front {
+                font-size: 24px;
+            }
+            .kiss-count {
+                font-size: 36px;
+            }
+            .card-container {
+                height: 450px;
+            }
+        }
+        
+        /* Subtle pattern overlay on card */
+        .card-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(#ff6b8b22 2px, transparent 2px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hearts background container -->
+    <div class="hearts-background" id="heartsBackground"></div>
+    
+    <!-- The card -->
+    <div class="card-container">
+        <div class="card" id="card">
+            <div class="card-face front">
+                <div class="heart-row">
+                    <span class="heart-decoration">❤️</span>
+                    <span class="heart-decoration">❤️</span>
+                    <span class="heart-decoration">❤️</span>
+                </div>
+                
+                <div class="message message-front">
+                    aaj mujhe teri andhi mehngi yaad aayi Harshjain
+                </div>
+                
+                <div class="heart-row">
+                    <span class="heart-decoration">💋</span>
+                    <span class="heart-decoration">😘</span>
+                    <span class="heart-decoration">💋</span>
+                </div>
+                
+                <div class="hint">Click to turn the card ❤️</div>
+            </div>
+            
+            <div class="card-face back">
+                <div class="kiss-count">Sending Harshjain 100 Crore Kisses 💋</div>
+                
+                
+                <div class="heart-row">
+                    <span class="heart-decoration">💖</span>
+                    <span class="heart-decoration">💝</span>
+                    <span class="heart-decoration">💖</span>
+                </div>
+                
+                <div class="hint">For Mmota💙</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const heartsBackground = document.getElementById('heartsBackground');
+        const heartEmojis = ['❤️', '💙', '🧡', '💛', '💚', '💜', '💖', '💗', '💓', '💞', '💕', '💋', '😘'];
+        
+        // Click to flip the card
+        card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+        
+        // Create floating hearts in background
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            
+            // Random heart emoji
+            const randomHeart = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            heart.innerHTML = randomHeart;
+            
+            // Random horizontal position
+            const leftPos = Math.random() * 100;
+            heart.style.left = `${leftPos}%`;
+            
+            // Random size
+            const size = 20 + Math.random() * 30;
+            heart.style.fontSize = `${size}px`;
+            
+            // Random animation duration (10-20 seconds)
+            const duration = 10 + Math.random() * 10;
+            heart.style.animationDuration = `${duration}s`;
+            
+            // Random delay
+            const delay = Math.random() * 5;
+            heart.style.animationDelay = `${delay}s`;
+            
+            // Random opacity
+            heart.style.opacity = 0.4 + Math.random() * 0.4;
+            
+            // Add to background
+            heartsBackground.appendChild(heart);
+            
+            // Remove heart after animation completes
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.parentNode.removeChild(heart);
+                }
+            }, (duration + delay) * 1000);
+        }
+        
+        // Create initial hearts
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => createFloatingHeart(), i * 300);
+        }
+        
+        // Continuously create hearts
+        const heartInterval = setInterval(() => {
+            createFloatingHeart();
+        }, 800);
+        
+        // Create more hearts when card is flipped (reading the back side)
+        let flippedHeartsInterval;
+        card.addEventListener('click', function() {
+            if (this.classList.contains('flipped')) {
+                // Create more hearts when reading the kisses message
+                flippedHeartsInterval = setInterval(() => {
+                    for (let i = 0; i < 3; i++) {
+                        createFloatingHeart();
+                    }
+                }, 500);
+            } else {
+                // Clear interval when card is flipped back
+                if (flippedHeartsInterval) {
+                    clearInterval(flippedHeartsInterval);
+                }
+            }
+        });
+        
+        // Clean up intervals if needed
+        window.addEventListener('beforeunload', () => {
+            clearInterval(heartInterval);
+            if (flippedHeartsInterval) {
+                clearInterval(flippedHeartsInterval);
+            }
+        });
+    </script>
+</body>
+</html>
